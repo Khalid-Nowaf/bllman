@@ -1,0 +1,32 @@
+{
+  "name": "bllman",
+  "version": "1.0.0",
+  "description": "bllman app",
+  "main": "./bin/www",
+  "engines": {
+    "node": "~6.9"
+  },
+  "scripts": {
+    "start": "grunt serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khalid-Nowaf/bllman.git"
+  },
+  "keywords": [
+    "bllman"
+  ],
+  "author": "Khalid Nowaf",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Khalid-Nowaf/bllman/issues"
+  },
+  "homepage": "https://github.com/Khalid-Nowaf/bllman#readme",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+   
+  }
+}

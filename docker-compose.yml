@@ -1,0 +1,6 @@
+web:
+  build: .
+  volumes:
+    - "./bllman:/bllman"
+  ports:
+    - "3030:3000"
