@@ -10,6 +10,7 @@ var passport = require('passport');
 var config = require('./config');
 
 var routes = require('./routes/index');
+var auth   = require('./routes/auth');
 var users = require('./routes/users');
 
 var app = express();
@@ -36,6 +37,7 @@ require('./config/passport')(passport);
 // Routes
 app.use('/', routes);
 app.use('/users', users);
+app.use('/auth', auth);
 
 /**
  * Error handlers
