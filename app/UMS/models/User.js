@@ -13,7 +13,22 @@ var UserSchema = new Schema({
   password: {
     type: String,
     required: true
+  },
+  phone: { // TODO: need validation !!
+    type: Number,
+    unique: true,
+    required: true
+  },
+  code: { 
+    type: Number,
+    default: 0000
+  },
+  veri: { 
+    type: Boolean,
+    default: false
   }
+
+
 });
 
 // Hash the user's password before inserting a new user

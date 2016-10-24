@@ -4,6 +4,7 @@ let passport = require('passport');
 let jwt = require('jsonwebtoken');
 var User = require('../models/User');
 let config = require('../config');
+var veri_code = require('../services/veri-code');
 
 // Register new users
 router.post('/signup', function(req, res) {
@@ -15,21 +16,65 @@ router.post('/signup', function(req, res) {
   } else {
     let newUser = new User({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      phone: req.body.phone
     });
 
     // Attempt to save the user
-    newUser.save(function(err) {
+    newUser.save(function(err,user) {
       if (err) {
         return res.json({
           success: false,
-          message: 'That email address already exists.'
+          message: 'That email address already exists.',
+          error: err
         });
       }
-      res.json({
+      // after create new use generate verification code TODO: send SMS
+      veri_code.getCode(user.phone,function(){
+        res.json({
         success: true,
         message: 'Successfully created new user.'
       });
+      });
+      
+    });
+  }
+});
+
+// verification route that verified an account
+router.post('/veri', function(req, res) {
+   if (!req.body.phone || !req.body.code) {
+    res.json({
+      success: false,
+      message: 'missing phone number or code .'
+    });
+  } else {
+    User.findOne({phone:req.body.phone},function(err,user){
+      if( err) throw err;
+
+      if (!user){
+        res.send({
+        success: false,
+        message: 'Phone number is not valid'
+      });
+      } else {
+        // check if code is match
+        if(req.body.code == user.code){
+          user.veri = true
+          user.save(function(err,user){
+             res.send({
+             success: true,
+             message: 'account has been verified'
+           });
+          });
+        // if the code does not match  
+        } else {
+          res.send({
+             success: true,
+             message: 'the code does not match'
+           });
+        }
+      }
     });
   }
 });
