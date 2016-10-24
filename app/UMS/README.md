@@ -1,11 +1,13 @@
 # User System Managment 
 ## Auth
 ### EndPoints
-1. /auth
-2. /rejester
+1. /auth/signup (post)
+2. /auth/singin (post) --> JWT TOKEN
+3. /auth/veri (POST) --> via SMS Verification Code
+4. /auth/reset/email --> reset account password using email 
+5. /auth/reset       --> reset account password via SMS Verification Code
 
-## Profile
-1. /user
-2. /user/profile (CURD)
-3. /user/billing (CURD)
-## Billing info
+## Profile 'next stage'
+1. /user (CURD)
+## Billing info 'next stage'
+2. /user/billing (get) JWT TOKEN
