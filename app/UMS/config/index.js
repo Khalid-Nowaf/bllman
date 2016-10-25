@@ -2,6 +2,8 @@
  * Basic configuration object
  */
 module.exports = {
+
+  
   auth: {
     secret: 'Little secret, big responsability...'
   },

@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 let passport = require('passport');
 
-router.get('/', function(req, res) {
-  User.find({}, function(err, users) {
-    res.json(users);
-  });
-});
+// router.get('/', function(req, res) {
+//   User.find({}, function(err, users) {
+//     res.json(users);
+//   });
+// });
 
 
 // profile route with JWT

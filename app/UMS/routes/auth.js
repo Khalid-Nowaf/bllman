@@ -134,7 +134,7 @@ router.post('/reset',(req, res) => {
      } else {
        if(user.code == req.body.code){
          user.password = req.body.password;
-         user.save((err,user)=>{
+         user.save(function(err,user){
            res.send({
             success: true,
             message: 'the password has been reseted for '+ user.email
