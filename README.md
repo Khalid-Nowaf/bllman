@@ -1,3 +1,3 @@
 # bllman
 blueman project
-(https://travis-ci.org/Khalid-Nowaf/bllman.svg?branch=master)
+[![Build Status](https://travis-ci.org/Khalid-Nowaf/bllman.svg?branch=master)](https://travis-ci.org/Khalid-Nowaf/bllman)
