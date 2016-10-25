@@ -23,4 +23,5 @@ before_install:
 
 install: true
 
-script: cd $TEST_DIR && npm install && npm test
+script: cd $TEST_DIR && npm install && npm run cover
+after_success: 'npm run coveralls'
