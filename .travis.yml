@@ -8,8 +8,7 @@ addons:
 packages:
         - g++-4.8
 env:
-  - TEST_DIR='app/UMS'
-  - CXX=g++-4.8
+        - TEST_DIR='app/UMS' CXX=g++-4.8
   
 script: cd $TEST_DIR && npm install && npm test
    
