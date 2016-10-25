@@ -8,28 +8,6 @@ describe('User Verification', function() {
     var userCode;
     var user = {email:'test3@test.com',password:'123123',phone:'066666666'}
 
-    before('Create new users before tests',function(done) { // create new user before the test 
-    request
-    .post('/auth/signup')
-    .send(user)
-    .set('Accept','application/json')
-    .expect(200)
-    .end((err,res)=>{
-        if(err) throw err;
-        // signin to get the auth token
-        request
-        .post('/auth/signin')
-        .send(user)
-        .set('Accept','application/json')
-        //.set('Authorization',userToken)
-        .expect(200)
-        .end((err, res) => {
-         userToken = 'JWT '+res.body.token 
-         done();  
-        });
-    });
-  });
-
   // after all test delete the dummy user
   after("After all test delete the dummy user",(done) => {
       User.remove({email:user.email},(err,duser)=>{
