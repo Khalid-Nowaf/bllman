@@ -1,4 +1,4 @@
-var chai = require('chai');
+var should = require('chai').should();
 var request = require('supertest')('http://localhost:3000');
 
 

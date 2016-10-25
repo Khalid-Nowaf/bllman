@@ -5,7 +5,7 @@ var User = require('../../models/User');
  
 describe('Users API', function() {
  var userToken;
- var user = {email:'test@test.com',password:'123123',phone:'0555555555'}
+ var user = {email:'test3@test.com',password:'123123',phone:'066666666'}
 
     before('Create new users before tests',function(done) { // create new user before the test 
     request
