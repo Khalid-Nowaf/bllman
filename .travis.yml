@@ -4,11 +4,9 @@ env:
   - CXX=g++-4.8 TEST_DIR='app/UMS'
 
 node_js:
-  - "0.8"
-  - "0.10"
-  - "0.12"
-  - "4"
   - "6"
+
+services: mongodb
 
 addons:
   apt:
