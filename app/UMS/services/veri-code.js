@@ -15,11 +15,11 @@ module.exports = {
     } else {
       // Check if phone number matches
       let code = Math.floor(100000 + Math.random() * 900000);
-      console.log("The Code for phone number: "+phoneNumber+"is :"+code);
+      //console.log("The Code for phone number: "+phoneNumber+"is :"+code);
 
       user.code = code;
       user.save(function(err,user){
-        console.log("user code updated ..");
+        //console.log("user code updated ..");
         cb();
       });
       
